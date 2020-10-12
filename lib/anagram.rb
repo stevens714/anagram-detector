@@ -20,15 +20,15 @@ class Anagram
     def match(word_list)
       anagrams = []
       word_list.each do |word|
-        if prep(@anagram) == prep(word) && @anagram.downcase != word.downcase
+        if comp(@anagram) == comp(word) 
           anagrams << word
         end
       end
       anagrams
     end
   
-    private
-    def prep(word)
+    
+    def comp(word)
       word.downcase.scan(/\w/).sort
     end
   end
